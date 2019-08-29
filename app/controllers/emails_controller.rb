@@ -31,15 +31,15 @@ class EmailsController < ApplicationController
   end
 
   def update
-  	@email.update(read: !@email.read)
+    @email = Email.find(params[:id])
+    if @email.read == false
+      @email.update(read:true)
+    else
+      @email.update(read:false)
+    end
     respond_to do |format|
 	      format.html { redirect_to root_path }
 	      format.js { }
-    end
-    if @email.read == true
-      @email.read = false
-    elsif @email.read == false
-      @email.read = true
     end
   end
 
