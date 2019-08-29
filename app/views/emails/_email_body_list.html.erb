@@ -1,0 +1,10 @@
+<ul>
+  <h2>Email selectionné</h2>
+  <div id="body-list">
+    <% @emails.each do |email|  %>
+      <li class="list-group-item">
+        <%= email.body %>
+      </li>
+    <% end %>
+  </div>
+</ul>

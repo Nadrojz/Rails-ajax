@@ -1,0 +1,13 @@
+<div id="button" class="btn d-flex justify-content-center">
+  <%= link_to "Recevoir un email", emails_path, method: :post, class:"btn btn-primary", remote: true %>
+</div>
+<div class="row">
+  <div class="col-6">
+    <!-- <h2>Liste des emails</h2> -->
+    <%= render 'email_object_list'  %>
+  </div>
+  <div class="col-6">
+    <!-- <h2>Email selectionné</h2> -->
+    <%= render 'email_body_list'  %>
+  </div>
+</div>

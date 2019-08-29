@@ -1,0 +1,2 @@
+alert("le fichier JS est exécuté!");
+$('#category-<%= @category.id%>').next().find('ul:first').append("<%= j render 'task', task: @task%>");

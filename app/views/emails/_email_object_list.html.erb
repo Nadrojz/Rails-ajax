@@ -1,0 +1,10 @@
+<ul>
+  <h2>Liste des emails</h2>
+  <div id="object-list">
+    <% @emails.each do |email|  %>
+      <li class="list-group-item">
+        <%= email.object %>
+      </li>
+    <% end %>
+  </div>
+</ul>
