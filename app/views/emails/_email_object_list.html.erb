@@ -1,10 +1,16 @@
 <ul>
   <h2>Liste des emails</h2>
   <div id="object-list">
-    <% @emails.each do |email|  %>
-      <li id="emailid-<%= email.id%>" class="list-group-item">
+    <% @emails.sort_by {|email|email.created_at}.each do |email|  %>
+    <%if email.read == false%>
+      <li id="emailid-<%= email.id%>" class="list-group-item font-weight-bold">
         <%= link_to email.object, email_path(email), remote:true%>
       </li>
+      <%elsif email.read == true%>
+        <li id="emailid-<%= email.id%>" class="list-group-item">
+          <%= link_to email.object, email_path(email), remote:true%>
+        </li>
+        <% end %>
     <% end %>
   </div>
 </ul>
