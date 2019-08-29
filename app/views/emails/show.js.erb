@@ -1,0 +1,2 @@
+document.getElementById("body-list").innerHTML = ""
+document.getElementById("body-list").insertAdjacentHTML("beforeend", "<%= j render 'show_email', email: @email %>")
